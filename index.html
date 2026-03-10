@@ -75,8 +75,6 @@
         .btn { padding: 0.8rem 1.8rem; border-radius: 4px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition); border: 1px solid var(--primary); }
         .btn-primary { background: var(--primary); color: var(--bg-color); box-shadow: var(--glow); }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--glow-strong); }
-        .btn-outline { background: transparent; color: var(--primary); }
-        .btn-outline:hover { background: rgba(0, 255, 156, 0.1); transform: translateY(-2px); }
 
         .terminal { background: var(--card-bg); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden; }
         .terminal-header { background: #1e252e; padding: 0.8rem 1rem; display: flex; gap: 8px; }
@@ -96,9 +94,11 @@
         .progress-fill { height: 100%; background: var(--primary); width: 0; transition: width 1.5s ease-out; }
 
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-        .cert-card { background: var(--card-bg); padding: 1.5rem; border-left: 4px solid var(--primary); border-radius: 4px; }
+        .cert-card { background: var(--card-bg); padding: 1.5rem; border-left: 4px solid var(--primary); border-radius: 4px; transition: var(--transition); }
+        .cert-card:hover { transform: translateY(-5px); border-color: var(--primary); background: rgba(0, 255, 156, 0.05); }
         .cert-card h4 { color: var(--text-main); margin-bottom: 0.5rem; }
         .cert-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .view-cert { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--primary); margin-top: 1rem; font-weight: 600; }
 
         .timeline::before { content: ''; position: absolute; left: 20px; height: 100%; width: 2px; background: rgba(0, 255, 156, 0.2); }
         .timeline-item { position: relative; padding-left: 60px; margin-bottom: 3rem; }
@@ -138,13 +138,13 @@
         <div class="container hero-content">
             <div class="hero-left fade-in">
                 <h2>Hello, I am</h2>
-                <h1>Aditya Kumar <span>Jaiswal</span> [cite: 1]</h1>
-                <h2 style="color: var(--text-muted); font-weight: 400;">Computer Science Undergraduate (Cybersecurity) [cite: 8]</h2>
+                <h1>Aditya Kumar <span>Jaiswal</span></h1>
+                <h2 style="color: var(--text-muted); font-weight: 400;">B.Tech CSE (Computer Networks & Cybersecurity)</h2>
                 <div class="btn-group">
                     <a href="https://github.com/AdityaJaiswalCNCS" class="btn btn-primary" target="_blank">
                         <span class="material-symbols-outlined">terminal</span> GitHub
                     </a>
-                    <a href="https://www.linkedin.com/in/aditya-kumar-jaiswal-72422a320" class="btn btn-outline" target="_blank">
+                    <a href="https://www.linkedin.com/in/aditya-kumar-jaiswal-72422a320" class="btn btn-outline" target="_blank" style="color: var(--primary);">
                         LinkedIn
                     </a>
                 </div>
@@ -166,14 +166,15 @@
 
     <section id="about">
         <div class="container">
-            <h2 class="section-title fade-in">About_Me [cite: 4]</h2>
+            <h2 class="section-title fade-in">About_Me</h2>
             <div class="about-grid fade-in">
                 <div class="about-image">
-                    <img src="image_6a9664.jpg" alt="Aditya Kumar Jaiswal">
+                    <img src="image.png" alt="Aditya Kumar Jaiswal">
                 </div>
                 <div class="about-text">
-                    <p>I am a <span class="highlight">Computer Science undergraduate</span> specializing in <span class="highlight">Computer Networks and Cybersecurity</span>[cite: 5, 8]. Currently pursuing my B.Tech at <span class="highlight">Galgotias University</span> with a CGPA of 8.71[cite: 10, 11].</p>
-                    <p>I am experienced in building mobile applications using <span class="highlight">Flutter and Dart</span> with API integration[cite: 6, 22]. I also hold a strong foundation in <span class="highlight">Ethical Hacking</span>, having completed a virtual internship with EduSkills (AICTE) where I performed vulnerability assessments and security analysis[cite: 40, 42, 43].</p>
+                    <p><span class="highlight">Computer Science undergraduate</span> at <span class="highlight">Galgotias University</span> specializing in <span class="highlight">Computer Networks and Cybersecurity</span>. I am having strong academic foundation in Data Structures, Operating System, etc.</p>
+                    <p>I am an experienced mobile developer specializing in <span class="highlight">Flutter and Dart</span>, with expertise in API integration and state management. Additionally, my background includes a virtual internship in <span class="highlight">Ethical Hacking</span> through EduSkills (AICTE), focusing on vulnerability assessments and security analysis.</p>
+                    <p>My technical journey is driven by a passion for building secure, scalable systems that bridge the gap between complex backend architectures and user-centric design.</p>
                 </div>
             </div>
         </div>
@@ -181,22 +182,22 @@
 
     <section id="skills">
         <div class="container">
-            <h2 class="section-title fade-in">Technical_Skills [cite: 20]</h2>
+            <h2 class="section-title fade-in">Technical_Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card fade-in" data-progress="85">
-                    <div class="skill-name">Flutter & Dart [cite: 21, 22]</div>
+                    <div class="skill-name">Flutter & Dart</div>
                     <div class="progress-bar"><div class="progress-fill"></div></div>
                 </div>
                 <div class="skill-card fade-in" data-progress="80">
-                    <div class="skill-name">Java & C [cite: 21]</div>
+                    <div class="skill-name">Java & C </div>
                     <div class="progress-bar"><div class="progress-fill"></div></div>
                 </div>
                 <div class="skill-card fade-in" data-progress="70">
-                    <div class="skill-name">Python & MySQL [cite: 21, 23]</div>
+                    <div class="skill-name">Python & MySQL </div>
                     <div class="progress-bar"><div class="progress-fill"></div></div>
                 </div>
-                <div class="skill-card fade-in" data-progress="75">
-                    <div class="skill-name">Networking & Cybersecurity [cite: 5]</div>
+                <div class="skill-card fade-in" data-progress="85">
+                    <div class="skill-name">Networking & Cybersecurity </div>
                     <div class="progress-bar"><div class="progress-fill"></div></div>
                 </div>
             </div>
@@ -205,42 +206,55 @@
 
     <section id="certifications">
         <div class="container">
-            <h2 class="section-title fade-in">Certifications [cite: 44]</h2>
+            <h2 class="section-title fade-in">Certifications</h2>
             <div class="cert-grid">
-                <div class="cert-card fade-in">
-                    <h4>Servlets & JSP [cite: 45]</h4>
-                    <p>GUVI / HCL - Oct 2025 [cite: 45, 46]</p>
-                </div>
-                <div class="cert-card fade-in">
-                    <h4>Java Collections [cite: 47]</h4>
-                    <p>GUVI / HCL - Oct 2025 [cite: 47, 49]</p>
-                </div>
-                <div class="cert-card fade-in">
-                    <h4>Machine Learning using Python [cite: 48]</h4>
-                    <p>NIELIT / NIT Calicut - Feb 2026 [cite: 48, 50]</p>
-                </div>
+                
+                <a href="collection certi.png" target="_blank" style="text-decoration: none;">
+                    <div class="cert-card fade-in">
+                        <h4>Java Collections</h4>
+                        <p>GUVI / HCL - Oct 2025</p>
+                        <span class="view-cert">View Certificate <span class="material-symbols-outlined">open_in_new</span></span>
+                    </div>
+                </a>
+
+                <a href="ml certficate.pdf" target="_blank" style="text-decoration: none;">
+                    <div class="cert-card fade-in">
+                        <h4>Machine Learning using Python </h4>
+                        <p>NIELIT, NIT Campus, P O,  Calicut, Kerala - Feb 2026 </p>
+                        <span class="view-cert">View Certificate <span class="material-symbols-outlined">open_in_new</span></span>
+                    </div>
+                </a>
+
+                <a href="servlets certi.png" target="_blank" style="text-decoration: none;">
+                    <div class="cert-card fade-in">
+                        <h4>Servlets & JSP </h4>
+                        <p>GUVI / HCL - Oct 2025 </p>
+                        <span class="view-cert">View Certificate <span class="material-symbols-outlined">open_in_new</span></span>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
 
     <section id="experience">
         <div class="container">
-            <h2 class="section-title fade-in">Education_Log [cite: 7]</h2>
+            <h2 class="section-title fade-in">Education_Log</h2>
             <div class="timeline" style="position: relative;">
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2024 - 2028 [cite: 9]</div>
-                        <div class="timeline-role">B.Tech in CSE (CN & CS) [cite: 8]</div>
-                        <div class="timeline-company">Galgotias University | CGPA: 8.71 [cite: 10, 11]</div>
+                        <div class="timeline-date">2024 - 2028 </div>
+                        <div class="timeline-role">B.Tech in CSE (CN & CS)</div>
+                        <div class="timeline-company">Galgotias University | CGPA: 8.71 </div>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2023 [cite: 13]</div>
-                        <div class="timeline-role">Class XII (Senior Secondary) [cite: 12]</div>
-                        <div class="timeline-company">R.K. Public School | 75% [cite: 14, 15]</div>
+                        <div class="timeline-date">2023 </div>
+                        <div class="timeline-role">Class XII (Senior Secondary)</div>
+                        <div class="timeline-company">R.K. Public School | 75% </div>
                     </div>
                 </div>
             </div>
@@ -253,27 +267,32 @@
             <div class="contact-content fade-in">
                 <div class="contact-info">
                     <h3>Contact Details</h3>
-                    <p>Location: Garhwa, Jharkhand, India [cite: 1]</p>
-                    <p><strong>Email:</strong> ravijaiswal822114@gmail.com [cite: 3]</p>
-                    <p><strong>Phone:</strong> +91 9142471063 [cite: 2]</p>
+                    <p>Location: Garhwa, Jharkhand, India </p>
+                    <p><strong>Email:</strong> ravijaiswal822114@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 9142471063 </p>
                     <div style="margin-top: 2rem;">
                         <a href="https://github.com/AdityaJaiswalCNCS" class="social-link"><span class="material-symbols-outlined">terminal</span></a>
                         <a href="https://www.linkedin.com/in/aditya-kumar-jaiswal-72422a320" class="social-link"><span class="material-symbols-outlined">work</span></a>
                     </div>
+                </div>
+                <div class="contact-form">
+                    <a href="Updated resume 1.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <span class="material-symbols-outlined">download</span> Download Resume
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Aditya Kumar Jaiswal. Handcrafted for the Cyber World.</p>
+        <p>&copy; 2026 Aditya Kumar Jaiswal. Specialized in Computer Networks & Cybersecurity.</p>
     </footer>
 
     <script>
         const codeText = [
             "const dev = {",
             "  name: 'Aditya Kumar Jaiswal',",
-            "  major: 'Cybersecurity & Networks',",
+            "  specialization: 'CN & Cybersecurity',",
             "  skills: ['Flutter', 'Java', 'Python'],",
             "  hackerMode: true",
             "};",
