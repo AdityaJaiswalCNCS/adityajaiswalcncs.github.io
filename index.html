@@ -93,6 +93,20 @@
         .progress-bar { width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden; margin-top: 1rem; }
         .progress-fill { height: 100%; background: var(--primary); width: 0; transition: width 1.5s ease-out; }
 
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+        .project-card { background: var(--card-bg); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; transition: var(--transition); position: relative; }
+        .project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--primary), var(--secondary), transparent); }
+        .project-card:hover { transform: translateY(-8px); border-color: rgba(0, 255, 156, 0.3); box-shadow: 0 10px 40px rgba(0, 255, 156, 0.1); }
+        .project-card-body { padding: 1.8rem; }
+        .project-card-body h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main); }
+        .project-card-body p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
+        .project-tag { font-size: 0.75rem; padding: 0.3rem 0.7rem; border-radius: 20px; background: rgba(0, 255, 156, 0.08); border: 1px solid rgba(0, 255, 156, 0.2); color: var(--primary); font-family: 'Fira Code', monospace; }
+        .project-links { display: flex; gap: 0.8rem; }
+        .project-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--primary); font-weight: 600; padding: 0.4rem 0.8rem; border: 1px solid rgba(0, 255, 156, 0.3); border-radius: 4px; transition: var(--transition); }
+        .project-link:hover { background: var(--primary); color: var(--bg-color); }
+        .project-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
         .cert-card { background: var(--card-bg); padding: 1.5rem; border-left: 4px solid var(--primary); border-radius: 4px; transition: var(--transition); }
         .cert-card:hover { transform: translateY(-5px); border-color: var(--primary); background: rgba(0, 255, 156, 0.05); }
@@ -113,6 +127,8 @@
         @media (max-width: 900px) {
             .hero-content { flex-direction: column; text-align: center; }
             .about-grid, .contact-content { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 1rem; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -127,6 +143,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#experience">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -173,7 +190,7 @@
                 </div>
                 <div class="about-text">
                     <p><span class="highlight">Computer Science undergraduate</span> at <span class="highlight">Galgotias University</span> specializing in <span class="highlight">Computer Networks and Cybersecurity</span>. I am having strong academic foundation in Data Structures, Operating System, etc.</p>
-                    <p>I am an experienced mobile developer specializing in <span class="highlight">Flutter and Dart</span>, with expertise in API integration and state management. Additionally, my background includes a virtual internship in <span class="highlight">Ethical Hacking</span> through EduSkills (AICTE), focusing on vulnerability assessments and security analysis.</p>
+                    <p>I am an experienced Android developer specializing in <span class="highlight">Kotlin</span> and <span class="highlight">Java</span>, with expertise in API integration, MVVM architecture, and building robust applications. Additionally, my background includes a virtual internship in <span class="highlight">Ethical Hacking</span> through EduSkills (AICTE), focusing on vulnerability assessments and security analysis.</p>
                     <p>My technical journey is driven by a passion for building secure, scalable systems that bridge the gap between complex backend architectures and user-centric design.</p>
                 </div>
             </div>
@@ -185,7 +202,7 @@
             <h2 class="section-title fade-in">Technical_Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card fade-in" data-progress="85">
-                    <div class="skill-name">Flutter & Dart</div>
+                    <div class="skill-name">Kotlin & Android Development</div>
                     <div class="progress-bar"><div class="progress-fill"></div></div>
                 </div>
                 <div class="skill-card fade-in" data-progress="80">
@@ -200,6 +217,74 @@
                     <div class="skill-name">Networking & Cybersecurity </div>
                     <div class="progress-bar"><div class="progress-fill"></div></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">My_Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card fade-in">
+                    <div class="project-card-body">
+                        <span class="project-icon">🌦️</span>
+                        <h3>WeatherApp</h3>
+                        <p>A modern Android Weather Application built using Kotlin and MVVM Architecture. Provides real-time weather info via OpenWeather API with dynamic day/night UI theme switching, hourly forecasts, and temperature unit conversion.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Kotlin</span>
+                            <span class="project-tag">MVVM</span>
+                            <span class="project-tag">Retrofit</span>
+                            <span class="project-tag">OpenWeather API</span>
+                            <span class="project-tag">Android SDK</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/AdityaJaiswalCNCS/WeatherApp" target="_blank" class="project-link">
+                                <span class="material-symbols-outlined">terminal</span> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-body">
+                        <span class="project-icon">🛡️</span>
+                        <h3>Border Post Surveillance Log</h3>
+                        <p>A GUI-based logging system for border security personnel. Built using Java (BlueJ) and connected to a MySQL database using JDBC via XAMPP. Features form-based log entry for incidents, officer info, and vehicle tracking.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">JDBC</span>
+                            <span class="project-tag">XAMPP</span>
+                            <span class="project-tag">Swing GUI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/AdityaJaiswalCNCS/Border-Post-Surveillance-Log" target="_blank" class="project-link">
+                                <span class="material-symbols-outlined">terminal</span> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-body">
+                        <span class="project-icon">🔐</span>
+                        <h3>CyberLearn - Ethical Hacking</h3>
+                        <p>An educational platform focused on ethical hacking and cybersecurity concepts. Covers vulnerability assessments, penetration testing techniques, and security analysis fundamentals for aspiring security professionals.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Cybersecurity</span>
+                            <span class="project-tag">Ethical Hacking</span>
+                            <span class="project-tag">Penetration Testing</span>
+                            <span class="project-tag">Security Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/AdityaJaiswalCNCS/CyberLearn-Ethical-Hacking-" target="_blank" class="project-link">
+                                <span class="material-symbols-outlined">terminal</span> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -293,7 +378,7 @@
             "const dev = {",
             "  name: 'Aditya Kumar Jaiswal',",
             "  specialization: 'CN & Cybersecurity',",
-            "  skills: ['Flutter', 'Java', 'Python'],",
+            "  skills: ['Kotlin', 'Java', 'Python'],",
             "  hackerMode: true",
             "};",
             "",
